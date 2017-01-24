@@ -1,0 +1,50 @@
+﻿ 
+<link rel="import" href="../Libraries/polymer.html" /> <!--ref polymer lib in component-->
+
+
+
+<!--create a dom module,give id,  with template and style-->
+<dom-module id="my-component">
+    <style>
+        h1{
+            color:green;
+        }
+    </style>
+
+    <template>
+       <input type="text" value="{{inputValue::input}}" />
+        <input type="text" value="{{firstName::input}}" />
+       <h1>Welcome <span>[[fullName]]</span></h1> 
+        <h1>Welcome <span>{{fisrtName}}</span></h1> 
+        <h2>{{inputValue}}</h2>
+    </template>
+
+</dom-module>
+
+<!--registers the element in dom-->
+<script>
+    Polymer({
+        /*component name*/
+        is: "my-component",
+
+        /*adding properites*/
+        properties: {
+            firstName: String, /*declared properties*/
+            lastName:{
+                type:String,
+                value:'Qumayo'
+            },
+
+            /*computed property*/
+            fullName: {
+                type: String,
+                computed:'computeFullName(firstName, lastName)'
+            }
+        },
+        computeFullName: function (firstName, lastName) {
+            return firstName + ' ' + lastName;
+        }
+
+    });
+ </script>
+
