@@ -1,10 +1,27 @@
 ﻿
 <link rel="import" href="../Libraries/polymer.html" />
-<link rel="import" href="../Libraries/polymer-min.html" />
+<link rel="import" href="../Libraries/polymer-mini.html" />
 <link rel="import" href="../Libraries/polymer-micro.html" />
 
 <dom-module id="contact-list">
     <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            display:flex;
+        }
+        li img{
+            border-radius: 50%;
+            margin-right:10px;
+        }
+        h3{
+            margin: 0 10px 0 0;
+            line-height:80px;
+        }
+         li span{
+             line-height:80px;
+         }
 
     </style>
 
@@ -12,17 +29,26 @@
         <ul>
             <li>
                  <h3>Maria</h3>
-                <img src=""/>
+                <img src="../images/1.jpg"/>
+                <span> maria@gmail.com</span>
             </li>
-            <li><h3>Maria</h3></li>
-            <li><h3>Maria</h3></li>
+            <li>
+            <h3>Maria</h3>
+              <img src="../images/2.jpg" />
+                <span> maria@gmail.com</span>
+            </li>
+            <li>
+            <h3>Maria</h3>
+                <img src="../images/3.jpg" />
+                <span> maria@gmail.com</span>
+            </li>
         </ul>
     </template>
 
 
 </dom-module>
 
-<scrpt>
+<script>
     Polymer({
         is: "contact-list"
     });
