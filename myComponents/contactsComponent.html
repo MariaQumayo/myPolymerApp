@@ -2,38 +2,22 @@
 <link rel="import" href="../Libraries/polymer.html" />
 <link rel="import" href="../Libraries/polymer-mini.html" />
 <link rel="import" href="../Libraries/polymer-micro.html" />
+<link rel="import" href="../myComponents/contactListing.html" />
 
 <dom-module id="contact-list">
     <style>
         ul{
             list-style: none;
         }
-        li{
-            display:flex;
-            padding: 20px;
-        }
         li + li{
             border-top: solid 1px #000000;
         }
-        li img{
-            border-radius: 50%;
-            margin-right:10px;
-        }
-        h3{
-            margin: 0 40px 0 0;
-            line-height:80px;
-        }
-        li span {
-            line-height: 80px;
-        }
-         img.resize{
-             max-width:30%;
-            max-height:30%;
-    }
+
 
     </style>
 
     <template>
+        <contact-listing></contact-listing>
         <ul>
             <template is="dom-repeat" items="{{contacts}}">
                 <li>

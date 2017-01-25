@@ -1,0 +1,42 @@
+﻿
+<link rel="import" href="../Libraries/polymer.html" />
+<link rel="import" href="../Libraries/polymer-mini.html" />
+<link rel="import" href="../Libraries/polymer-micro.html" />
+
+<dom-module id="contact-listing">
+    <style>
+          .listing-wrapper{
+            display:flex;
+            padding: 20px;
+        }
+
+        .listing-wrapper img{
+            border-radius: 50%;
+            margin-right:10px;
+        }
+        h3{
+            margin: 0 40px 0 0;
+            line-height:80px;
+        }
+        .listing-wrapper span {
+            line-height: 80px;
+        }
+
+    </style>
+
+    <template >
+        <div class="listing-wrapper">
+            <img src="{{item.img}}" />
+            <h3>{{item.name}}</h3>
+            <span> {{item.email}}</span>
+        </div>
+    </template>
+
+
+</dom-module>
+
+<script>
+    Polymer({
+        is: "contact-listing",
+    });
+</script>
