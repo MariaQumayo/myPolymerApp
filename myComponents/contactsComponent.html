@@ -10,38 +10,38 @@
         }
         li{
             display:flex;
+            padding: 20px;
+        }
+        li + li{
+            border-top: solid 1px #000000;
         }
         li img{
             border-radius: 50%;
             margin-right:10px;
         }
         h3{
-            margin: 0 10px 0 0;
+            margin: 0 40px 0 0;
             line-height:80px;
         }
-         li span{
-             line-height:80px;
-         }
+        li span {
+            line-height: 80px;
+        }
+         img.resize{
+             max-width:30%;
+            max-height:30%;
+    }
 
     </style>
 
     <template>
         <ul>
-            <li>
-                 <h3>Maria</h3>
-                <img src="../images/1.jpg"/>
-                <span> maria@gmail.com</span>
-            </li>
-            <li>
-            <h3>Maria</h3>
-              <img src="../images/2.jpg" />
-                <span> maria@gmail.com</span>
-            </li>
-            <li>
-            <h3>Maria</h3>
-                <img src="../images/3.jpg" />
-                <span> maria@gmail.com</span>
-            </li>
+            <template is="dom-repeat" items="{{contacts}}">
+                <li>
+                    <img src="{{item.img}}"/>
+                    <h3>{{item.name}}</h3>
+                    <span> {{item.email}}</span>
+                </li>
+            </template>
         </ul>
     </template>
 
@@ -50,6 +50,24 @@
 
 <script>
     Polymer({
-        is: "contact-list"
+        is: "contact-list",
+        ready: function () {
+            /*data object*/
+            this.contacts = [
+                        {
+                    name: "Peter",
+                    email: "peter@gmail.com",
+                    img: "../images/1.jpg"
+                }, {
+                    name: "Marry",
+                    email: "Marry@gmail.com",
+                    img: "../images/2.jpg"
+                }, {
+                     name: "Jack",
+                     email: "Jack@gmail.com",
+                     img: "../images/3.jpg"
+                 },
+            ]
+        }
     });
 </script>
