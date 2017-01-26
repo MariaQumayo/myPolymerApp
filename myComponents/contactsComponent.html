@@ -2,7 +2,7 @@
 <link rel="import" href="../Libraries/polymer.html" />
 <link rel="import" href="../Libraries/polymer-mini.html" />
 <link rel="import" href="../Libraries/polymer-micro.html" />
-<link rel="import" href="../myComponents/contactListing.html" />
+<link rel="import" href="myComponents/contactListing.html" />
 
 <dom-module id="contact-list">
     <style>
@@ -21,9 +21,9 @@
         <ul>
             <template is="dom-repeat" items="{{contacts}}">
                 <li>
-                    <img src="{{item.img}}"/>
-                    <h3>{{item.name}}</h3>
-                    <span> {{item.email}}</span>
+                   <img src="../images/1.jpg">
+                    <h3>{{itme.name}}</h3>
+                    <span>{{itme.email}}</span>
                 </li>
             </template>
         </ul>
